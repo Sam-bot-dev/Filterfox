@@ -1,0 +1,5 @@
+pyrebase4
+flask
+requests
+beautifulsoup4
+tqdm 

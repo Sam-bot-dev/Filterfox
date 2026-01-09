@@ -1,0 +1,2 @@
+here i am going to use crawler with rag model so that crawler bring data from website and rag model use it to generate and make our work 
+easy

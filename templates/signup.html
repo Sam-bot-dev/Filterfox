@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NeuraSeek Sign Up</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+  body {
+    background: #FAFAFA;
+    font-family: 'Inter', sans-serif;
+    color: #1A1A1A;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .signup-container {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    padding: 2.5rem 3rem;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+  }
+  .signup-header { font-weight: 600; font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center; }
+  label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 0.9rem; color: #555555; }
+  input[type="email"], input[type="password"], input[type="text"] {
+    width: 100%; padding: 0.85rem 1rem; margin-bottom: 1.25rem; border: 1.5px solid #ccc; border-radius: 8px; font-size: 1rem; outline: none;
+    transition: border-color 0.3s;
+  }
+  input:focus { border-color: #555555; box-shadow: 0 0 6px rgba(85, 85, 85, 0.25); }
+  button { background: #1A1A1A; color: white; padding: 0.95rem; font-weight: 600; font-size: 1rem; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s ease; }
+  button:hover { background: #555555; }
+  .google-btn { background: #111111; display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 1rem; }
+  .footer-text { text-align: center; margin-top: 1.25rem; font-size: 0.875rem; color: #555555; }
+  .footer-text a { color: #1A1A1A; font-weight: 600; text-decoration: none; }
+  .footer-text a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="signup-container" role="main" aria-label="Sign up for NeuraSeek">
+  <h1 class="signup-header">Create your NeuraSeek Account</h1>
+
+  <!-- Google Sign-Up Button -->
+  <button id="googleSignUpBtn" class="google-btn">
+    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo" style="height:20px;"> Sign up with Google
+  </button>
+
+  <form id="signupForm" novalidate>
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="John Doe" required />
+    <label for="email">Email address</label>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required />
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="At least 6 characters" required minlength="6" />
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <p class="footer-text">Already have an account? <a href="signin.html">Sign in</a></p>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, updateProfile, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAGEj-3FnOTx9XFygjcZ5XrhPje2mY4w7s",
+  authDomain: "seeker-aa1ec.firebaseapp.com",
+  projectId: "seeker-aa1ec",
+  storageBucket: "seeker-aa1ec.firebasestorage.app",
+  messagingSenderId: "42245521307",
+  appId: "1:42245521307:web:963e794ad242509d5feb3e",
+  measurementId: "G-54VQX6D9X0"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+
+// Google Sign-Up
+document.getElementById('googleSignUpBtn').addEventListener('click', async () => {
+  try {
+    const result = await signInWithPopup(auth, provider);
+    const user = result.user;
+    alert(`✅ Signed in as ${user.displayName}`);
+    window.location.href = "/"; // redirect to main index
+  } catch(error) {
+    console.error(error.message);
+    alert("❌ Google sign-up failed: " + error.message);
+  }
+});
+
+// Email/Password Sign-Up
+const form = document.getElementById('signupForm');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value.trim();
+
+  if (!name || !email || password.length < 6) { alert("⚠️ Fill all fields correctly."); return; }
+
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    await updateProfile(userCredential.user, { displayName: name });
+    alert("✅ Account created! Welcome " + name);
+    window.location.href = "/"; // redirect to main index
+  } catch(error) {
+    alert("❌ Error: " + error.message);
+  }
+});
+</script>
+
+</body>
+</html>

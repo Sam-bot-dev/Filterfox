@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Filter Fox - AI-Powered Search</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#E0E0E0",
+        "background-light": "#FAFAFA",
+        "background-dark": "#1A1A1A",
+        "text-title-light": "#1A1A1A",
+        "text-title-dark": "#FAFAFA",
+        "text-body-light": "#555555",
+        "text-body-dark": "#CCCCCC",
+        "surface-light": "#FFFFFF",
+        "surface-dark": "#2C2C2C",
+        "border-light": "#E0E0E0",
+        "border-dark": "#333333",
+        "subtle-light": "#F0F0F0",
+        "subtle-dark": "#2C2C2C",
+      },
+      fontFamily: { "display": ["Inter", "sans-serif"] },
+      borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+      boxShadow: { 'soft': '0 4px 12px rgba(0,0,0,0.08)', 'soft-dark': '0 4px 12px rgba(255,255,255,0.08)' }
+    },
+  },
+}
+</script>
+<style>
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.bg-forest { 
+  background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+}
+</style>
+</head>
+<body class="font-display bg-background-dark text-text-body-dark">
+
+<div class="relative flex min-h-screen w-full flex-col bg-forest">
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+  <!-- HEADER -->
+  <header class="absolute top-0 left-0 right-0 z-10 p-6">
+    <div class="container mx-auto flex items-center justify-between">
+
+      <!-- LEFT: NeuraSeek -->
+      <div class="flex items-center gap-2">
+        <h2 class="text-text-title-dark text-lg font-bold">Filter_FoX</h2>
+      </div>
+
+      <!-- RIGHT: Sign In / Sign Up or User Avatar -->
+      <div class="flex items-center gap-2 relative">
+        <!-- Buttons if user not logged in -->
+        <button id="signupBtn" class="flex min-w-[84px] items-center justify-center h-10 px-4 bg-primary text-text-title-dark text-sm font-bold rounded-lg transition-transform hover:scale-105">Sign up</button>
+        <button id="signinBtn" class="flex min-w-[84px] items-center justify-center h-10 px-4 bg-primary text-text-title-dark text-sm font-bold rounded-lg transition-transform hover:scale-105">Sign in</button>
+
+        <!-- User Avatar -->
+        <div id="userAvatarContainer" class="hidden relative w-10 h-10 rounded-full cursor-pointer border-2 border-white">
+          <img id="avatarImg" src="" alt="User Avatar" class="w-full h-full object-cover rounded-full"/>
+          <!-- Dropdown -->
+          <div id="avatarDropdown" class="hidden absolute right-0 mt-12 w-40 bg-surface-dark shadow-soft-dark rounded-lg py-2 flex flex-col z-50">
+            <button id="logoutBtn" class="px-4 py-2 text-sm text-text-body-dark hover:bg-subtle-dark text-left">Logout</button>
+          </div>
+        </div>
+
+        <!-- Theme toggle -->
+        <button id="themeBtn" class="flex h-10 w-10 items-center justify-center rounded-lg bg-subtle-dark text-text-body-dark transition-transform hover:scale-105">
+          <span class="material-symbols-outlined dark:hidden">dark_mode</span>
+          <span class="material-symbols-outlined hidden dark:inline">light_mode</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="relative flex flex-1 flex-col items-center justify-center px-4 pt-20 pb-10">
+    <div class="flex w-full max-w-2xl flex-col items-center gap-8">
+      <h1 class="text-text-title-dark tracking-light text-5xl font-bold">Filter_FoX</h1>
+      <div class="w-full">
+        <div class="relative w-full shadow-soft-dark rounded-full">
+          <label class="flex flex-col w-full">
+            <div class="flex w-full items-stretch h-14">
+              <div class="text-text-body-dark flex items-center justify-center pl-5 pr-2">
+                <span class="material-symbols-outlined text-2xl">search</span>
+              </div>
+              <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-full text-text-title-dark focus:outline-0 focus:ring-0 border-none bg-surface-dark/70 h-full placeholder:text-text-body-dark pl-0 text-base" placeholder=" Search the world with Filter_Fox"/>
+              <div class="flex items-center justify-center gap-2 pr-4">
+                <span class="material-symbols-outlined cursor-pointer text-text-body-dark transition-transform hover:scale-110">mic</span>
+                <span class="material-symbols-outlined cursor-pointer text-text-body-dark transition-transform hover:scale-110">auto_awesome</span>
+              </div>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- BUTTON SCRIPTS -->
+<script>
+document.getElementById("signupBtn").addEventListener("click", () => {
+  document.body.style.transition = "opacity 0.5s";
+  document.body.style.opacity = 0;
+  setTimeout(() => window.location.href = "/darksignup.html", 500);
+});
+document.getElementById("signinBtn").addEventListener("click", () => {
+  document.body.style.transition = "opacity 0.5s";
+  document.body.style.opacity = 0;
+  setTimeout(() => window.location.href = "/darksignin.html", 500);
+});
+document.getElementById("themeBtn").addEventListener("click", () => {
+  document.body.style.transition = "opacity 0.3s";
+  document.body.style.opacity = 0;
+  setTimeout(() => window.location.href = "/", 300);
+});
+</script>
+
+<!-- FIREBASE AUTH -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAGEj-3FnOTx9XFygjcZ5XrhPje2mY4w7s",
+  authDomain: "seeker-aa1ec.firebaseapp.com",
+  projectId: "seeker-aa1ec",
+  storageBucket: "seeker-aa1ec.firebasestorage.app",
+  messagingSenderId: "42245521307",
+  appId: "1:42245521307:web:963e794ad242509d5feb3e",
+  measurementId: "G-54VQX6D9X0"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+const avatarContainer = document.getElementById("userAvatarContainer");
+const avatarDropdown = document.getElementById("avatarDropdown");
+const logoutBtn = document.getElementById("logoutBtn");
+
+onAuthStateChanged(auth, (user) => {
+  if(user){
+    document.getElementById("signinBtn").style.display = "none";
+    document.getElementById("signupBtn").style.display = "none";
+    avatarContainer.style.display = "block";
+    document.getElementById("avatarImg").src = user.photoURL || "https://www.gravatar.com/avatar/?d=mp";
+  } else {
+    document.getElementById("signinBtn").style.display = "inline-flex";
+    document.getElementById("signupBtn").style.display = "inline-flex";
+    avatarContainer.style.display = "none";
+  }
+});
+
+// Dropdown toggle
+avatarContainer.addEventListener("click", (e) => {
+  e.stopPropagation();
+  avatarDropdown.classList.toggle("hidden");
+});
+
+// Close dropdown when clicking outside
+document.addEventListener("click", () => {
+  avatarDropdown.classList.add("hidden");
+});
+
+// Logout
+logoutBtn.addEventListener("click", async () => {
+  await signOut(auth);
+  avatarDropdown.classList.add("hidden");
+  alert("✅ Logged out successfully!");
+});
+</script>
+
+</body>
+</html>
