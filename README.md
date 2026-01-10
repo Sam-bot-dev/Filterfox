@@ -1,4 +1,10 @@
 # 🦊 Filter_Fox
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-black.svg" alt="MIT License"/>
+  <img src="https://img.shields.io/badge/Status-Active-success.svg" alt="Project Status"/>
+  <img src="https://img.shields.io/badge/AI-RAG%20Powered-darkgrey.svg" alt="RAG Powered"/>
+</p>
+
 ### 🔍 Intelligent Search Engine + 🤖 AI Chat (Filter_GPT)
 
 > **Filter_Fox** is a next-generation AI-powered search engine that combines  
@@ -197,3 +203,17 @@ Submit pull requests
 📧 Email: bavesh2006kumar@gmail.com
 
 🐙 GitHub: @Sam-bot-dev
+
+---
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+✔ Free to use  
+✔ Free to modify  
+✔ Free to distribute  
+
+See the full license text here → [LICENSE](LICENSE)
