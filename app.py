@@ -4,16 +4,7 @@ from firebase_admin import credentials, auth, firestore
 
 cred = credentials.Certificate("key.json")
 firebase_admin.initialize_app(cred)
-firebaseConfig = {
-  'apiKey': "AIzaSyAGEj-3FnOTx9XFygjcZ5XrhPje2mY4w7s",
-  'authDomain': "seeker-aa1ec.firebaseapp.com",
-  'databaseURL': "https://seeker-aa1ec-default-rtdb.firebaseio.com",
-  'projectId': "seeker-aa1ec",
-  'storageBucket': "seeker-aa1ec.firebasestorage.app",
-  'messagingSenderId': "42245521307",
-  'appId': "1:42245521307:web:963e794ad242509d5feb3e",
-  'measurementId': "G-54VQX6D9X0"
-};
+# firebase credientials
 app = Flask(__name__)
 db = firestore.client()
 
