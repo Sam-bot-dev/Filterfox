@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Filter_fox - Image Search</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+    .glowing-border {
+        box-shadow: 0 0 0 1px #0d59f2, 0 0 8px #0d59f2, 0 0 12px #0d59f2;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0d59f2",
+            "background-light": "#f5f6f8",
+            "background-dark": "#101622",
+            "ui-dark": "#222f49",
+            "ui-text": "#90a4cb",
+            "text-light": "#E0E0E0",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-dark group/design-root overflow-x-hidden text-text-light">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[1280px] w-full flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-ui-dark px-4 sm:px-6 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Filter_fox</h2>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-ui-dark text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined text-xl">person</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-ui-dark text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined text-xl">settings</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-primary text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4">
+<span class="material-symbols-outlined text-xl">add</span>
+<span class="hidden sm:inline">Upload</span>
+</button>
+</div>
+</header>
+<main class="flex flex-col gap-4 px-4 sm:px-6">
+<div class="pt-6">
+<label class="flex flex-col min-w-40 h-14 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full border border-ui-dark focus-within:glowing-border transition-shadow">
+<div class="text-ui-text flex border-none bg-ui-dark items-center justify-center pl-4 rounded-l-xl border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-white focus:outline-0 focus:ring-0 border-none bg-ui-dark focus:border-none h-full placeholder:text-ui-text px-4 text-lg font-normal leading-normal" value="Futuristic cityscapes"/>
+<div class="flex items-center justify-center rounded-r-xl border-l-0 border-none bg-ui-dark pr-4">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-transparent text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] h-auto min-w-0 px-0">
+<span class="material-symbols-outlined text-ui-text">cancel</span>
+</button>
+</div>
+</div>
+</label>
+</div>
+<div class="flex flex-wrap items-center gap-3 p-3 overflow-x-auto">
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-ui-dark pl-4 pr-3 hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined text-xl">photo_size_select_large</span>
+<p class="text-white text-sm font-medium leading-normal">Size</p>
+<span class="material-symbols-outlined text-xl">arrow_drop_down</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-ui-dark pl-4 pr-3 hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined text-xl">category</span>
+<p class="text-white text-sm font-medium leading-normal">Type</p>
+<span class="material-symbols-outlined text-xl">arrow_drop_down</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-ui-dark pl-4 pr-3 glowing-border">
+<span class="material-symbols-outlined text-xl text-primary">palette</span>
+<p class="text-white text-sm font-medium leading-normal">Color</p>
+<span class="material-symbols-outlined text-xl">arrow_drop_down</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-ui-dark pl-4 pr-3 hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined text-xl">verified</span>
+<p class="text-white text-sm font-medium leading-normal">License</p>
+<span class="material-symbols-outlined text-xl">arrow_drop_down</span>
+</button>
+<div class="flex-grow"></div>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-primary pl-4 pr-3">
+<span class="material-symbols-outlined text-xl text-white">toggle_on</span>
+<p class="text-white text-sm font-medium leading-normal">Safe Search</p>
+</button>
+</div>
+<div class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4 p-4">
+<div class="flex flex-col gap-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl transition-all duration-300 ease-in-out transform group-hover:scale-105 group-hover:glowing-border" data-alt="A neon-lit futuristic cityscape at night with flying vehicles" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD8y4YSuWR5Z2oVI_B0t8yzRpXRH4krjSgreSqHEh8PpCuKQYT641HhGOs8p6sbYd663uSp6dyNFuxzMYX00kHzymhjR9PJnI4iLIbcl5jBqfhjLkc8l-l-iGTpFYA2hbXBJxtqxU4djieG5j50KQVwDC4Mh-l0iLiSv-XjA73xAdAyc7xDC_8NIUW7Cvz4P8MGdSmSCqOjopE7nb7TFUONI9Hl9KKDMnt3rswUBpnSfTvYa0YKjMNyPNKo5MKN_FjpUhY-1rADLdAx");'></div>
+</div>
+<div class="flex flex-col gap-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl transition-all duration-300 ease-in-out transform group-hover:scale-105 group-hover:glowing-border" data-alt="A towering skyscraper with a unique, twisting architecture in a futuristic city" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDZeCNOXnY2yiJuipfiWWOfGCSDmg8bViqNS2s-Ymv56xjuWncdw8xYwL9w0HkXSr-f_5_jAEkbi_CFu7fyPpWFJvaU5YO-p7VXVYWjWRmaPCuimeZZop4usRPBdKd7r2fCL0VVRX9qSLaPpiCW8KZXzXAcVDFXB9h0K11rPjDp0Ums21UjLeEkxCk8R71OrV-jReiTnxBCd-2iqEiHf2nP-2q-yr1_ffjuGC-VKWiFfFvi0-W4ydUb4fJSTIX3GW1fgFPfuLPdYkTq");'></div>
+</div>
+<div class="flex flex-col gap-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl transition-all duration-300 ease-in-out transform group-hover:scale-105 group-hover:glowing-border" data-alt="Cyberpunk style street view with holographic signs and a moody atmosphere" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAgzHWps6UX_aoHHyk0PJeo6PV-j5_MD1FxMcGL9C_EhuA2cD4aeXqJgrulBujgGNKvz9A_TO5Az-hAI3i0rkTMz-0n3Nz_TB7ENt0iOo9eguixea8LJo75xTXvRtog74dVOw582XtSlaAPKlGaz_SFjV2lGhw5O-tENqrhYKc7-xlW1enyQPeSci3vgD7JJ7d3zGRLs4kI31nJBoi0AmkKq-FGgiwqby_Gch46UXi60_rqDuDBnEPddtyG4Yt6Ma1cTeSOBPKZoPge");'></div>
+</div>
+<div class="flex flex-col gap-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl transition-all duration-300 ease-in-out transform group-hover:scale-105 group-hover:glowing-border" data-alt="A wide-angle view of a futuristic city skyline against a sunset" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA21XlVpPcoJwyA9QfyPUToeJy7sUzzej4hxgtQHP5bLHU-tAjMzzYMrwG7kHknsyfMB8Nezrj45uizJt69VBA-AKAs7wWLV7Fi0uaSwDos6efPW4YApUewca9E1y6DBbhi14huHi6NuFajPiUKmI5WE2Qyxrjpxr4JOJv7_fYmoua6CS9le6pWNm4Mzw1BEq9c4BRPMuuwR8knCsIz02g6M5HWn563yOgkhktzEyrNG2ldyE_rA_h6-c5nk2OY6BIUkaSjcMiZDO-L");'></div>
+</div>
+<div class="flex flex-col gap-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl transition-all duration-300 ease-in-out transform group-hover:scale-105 group-hover:glowing-border" data-alt="An advanced transportation system with monorails weaving through futuristic buildings" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBAAImJ-Y8ZE2n5gRITZtLj7YRijLMX0uxe1GA5TVBL0E4s8IZ0L-cdsknJCCoULjctfxWnxum-z77Aypr6F9l0FwR3IZiFa7sxOgqD--2DIg7wLJ_Fm_cBU2M4ejvF0-fJUhhhTGGNVGy9xAOwbZNjrFFK340s4sFmB3n5ZJnzNXVueHmXAiy0r0PhvjHM9BAYX0UqpGDAeX0Kq5pQoXCtkPtWJ2NH4EchXNaNZt1sNDNJTQkNrZMNQ4jNekO7RRqbl418F4vmXr2m");'></div>
+</div>
+<div class="flex flex-col gap-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl transition-all duration-300 ease-in-out transform group-hover:scale-105 group-hover:glowing-border" data-alt="A cityscape view from a high-rise balcony, showing layers of buildings and lights" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBb2OQNzhUijfVzze73gaEIzIJ-MQ3zBhb6gfvCK8uqE2vbH7q1O3Jcod3jQ3fG-w1pwgKG_n1aiFJC-kItMYR5UAAvVWvVBMBrUkyCkkfbn5ysMvN8c5aojk3VsyVrWs4mCLMizVsVbezRrrMqDakh9jO0vVzdG75qMTiXy46jvYSCZm93ukTaWogxoFN4TPuNbaQTdN6KWUPjfllmA5HoNwYQlKcjYXD_UVRrOkiKFc9TV7Tc1xeqT6f4FJa6VfI3ADldaOjQCAn8");'></div>
+</div>
+<div class="flex flex-col gap-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl transition-all duration-300 ease-in-out transform group-hover:scale-105 group-hover:glowing-border" data-alt="Futuristic architecture with organic, flowing shapes and green spaces" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAn3j1g3eClsJYPMlMr-N8G3N8AkttDO3fBFgj3M44rZBDxM19Ec8PIy_1FE72KHmzapxdYNthpGBuRbf8r__MLba00LpADMUwNqREUzZCURUq7V9hbx6efyLdkMvpG7zFB3D3_FF6grMUfE31TrfI4KhRRXoXcc_it41LvaOoUNUCZnxXk_HkY8ZoOFqSD9c0AesFCI0FTiMwCf3C8RHq46P0YO4KXotjgAQ7E6wWZoYDwwE4nBGwIaONAys92HwcZVzcO2QZfJsJi");'></div>
+</div>
+<div class="flex flex-col gap-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl transition-all duration-300 ease-in-out transform group-hover:scale-105 group-hover:glowing-border" data-alt="A bustling cityscape with digital billboards and heavy air traffic" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAuxvQlDJllRy4lddTxoIqCeLNquZ3NgCgQsN-f-0HN_DfR0nawRLlSCjciB3fY4j3CD1qRxQnJKSm6vflUeRbSZsylcWL5SN2zAWHRt1PrSdrzTY8N0-exKNiE-r__gniRRbsgaDUnJ_wDmRBrmzVlGiUf3-FWwzDjGIZ-uVegWsO-chuzhYWIyiRFKmPZZT29v5E6hbtEPyAwVpJlNaPWS4hn-QEq35ROnJz9oM0DRup2RJq7FHAuDETUHV5HArbJKHA8D3_6pTft");'></div>
+</div>
+<div class="flex flex-col gap-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl transition-all duration-300 ease-in-out transform group-hover:scale-105 group-hover:glowing-border" data-alt="A clean, minimalist futuristic city with sleek white buildings under a clear blue sky" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuASoVyioj72OV3rJkUdVLugsg9HUV1k1Wa9mpADof6zitmhYDAMfpnMkHP78c2i8o_v2LunKnZ8EUIh86DckFXSaKClIf8_VryH1US6j_F-l3bp2HpmXwrs8ghmLTzPY6NNuqVpqcX_njOIBju0Zw7H4m6sFlSALy3KMRksk5GXKwkpYrLg5EEmLsdgAhgNyKV60Dw_fW1oix2SEsIUiscqIizgKodbFNVT2tEyFFz_miRsHaikO_HonjckHs_SVgPlCq-gZSusBacd");'></div>
+</div>
+<div class="flex flex-col gap-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl transition-all duration-300 ease-in-out transform group-hover:scale-105 group-hover:glowing-border" data-alt="A dense urban environment with stacked buildings and intricate details" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB7EmM9xkJbntOuq2OWctdbCB0wJz1nEo4cx7ecnn3QEZd1dMpGZWzf-gTdsBUtbk_niugrzM5mq8p_kTaNX-pAbhISbmZ17qirkcG-FeRv8C-1yuQXnb8YJyQExVmWw82uBH3SYEwSxFM3CaihDpwRVVmpeIjybXYrpbM05_3XEhLHOYgSuf-wK6onjtTIos2sOvFmTsD7HT5y4Y5vJ08sevDa_Q9aMnvNyYXJR_G8lQcTjtCMTzt3l1F88wW0_VzRKe_GwldPfws3");'></div>
+</div>
+<div class="flex flex-col gap-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl transition-all duration-300 ease-in-out transform group-hover:scale-105 group-hover:glowing-border" data-alt="Rainy night in a futuristic city, with reflections on the wet streets" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAYbL9Z8Ltpzf_8wpqG8lLoDYI5MFO-Rt-R4ok68OOLoBmUGDtDWs8GMwK-fKDhCxXtzz_EmKwDqAMvbmi4Wu6ou1uah0kj0bHQ-uK6Bze3mMY5NfIk5VmoBvIbcCoO5o5CC3kRtPxvtApD8_xjndtVmf4PHVzVAfrXYg7vW-whgELaXJUsGaM5CsnSYg-Jw-Wapd6qktQzszkzgn1FQE4Shzl86FJkQCuVbFDhI23lS9vnWwqJheodyEw3fW1zt3IllAl7R0uA3ViZ");'></div>
+</div>
+<div class="flex flex-col gap-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl transition-all duration-300 ease-in-out transform group-hover:scale-105 group-hover:glowing-border" data-alt="A futuristic city integrated with nature, featuring vertical gardens and green roofs" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDlx2MVjZRwfy-rtRyidxp2MmucpM4RZqn0FPGEpj-v3uarAssIhi313OAUiHpR6SsSthEw59jH9jTy8JOTfy6wT2RMd5WWfX_PfkSRT4LTREbGPItl7IYaCUY7wqk81QIxfJ5FMbn8lDXuWn6yEbmH2w1tuQoC0WTO6kxFc-miTodXliaP-8zAfTLF6cHgNfcWOthJ4aY3QDdNGPyjgmqaaNlN4dlXve0YEtKqQxoUCKiqYRr34lPIJSS6KkhagW3Cyjx5yeSMbxcC");'></div>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-4">
+<div class="flex gap-6 justify-center"><p class="text-ui-text text-base font-medium leading-normal">Loading more images...</p></div>
+<div class="rounded-full bg-ui-dark h-2 w-full max-w-sm mx-auto overflow-hidden">
+<div class="h-2 rounded-full bg-primary animate-pulse" style="width: 100%;"></div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+</div>
+</body></html>
