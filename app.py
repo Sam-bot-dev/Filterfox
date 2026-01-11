@@ -4,7 +4,16 @@ from firebase_admin import credentials, auth, firestore
 
 cred = credentials.Certificate("key.json")
 firebase_admin.initialize_app(cred)
-# firebase credientials
+firebaseConfig = { 
+  'apiKey': "AIzaSyAGEj-3FnOTx9XFygjcZ5XrhPje2mY4w7s",
+  'authDomain': "seeker-aa1ec.firebaseapp.com",
+  'databaseURL': "https://seeker-aa1ec-default-rtdb.firebaseio.com",
+  'projectId': "seeker-aa1ec",
+  'storageBucket': "seeker-aa1ec.firebasestorage.app",
+  'messagingSenderId': "42245521307",
+  'appId': "1:42245521307:web:963e794ad242509d5feb3e",
+  'measurementId': "G-54VQX6D9X0"
+};
 app = Flask(__name__)
 db = firestore.client()
 
@@ -39,17 +48,29 @@ def darksign():
 @app.route('/darksignup.html')
 def darkup():
     return render_template('darksignup.html')
-@app.route('/about.html')
+@app.route('/about')
 def about():
     return render_template('about.html')
-@app.route('/darkabout.html')
+@app.route('/darkabou')
 def darkabout():
     return render_template('darkabout.html')
-@app.route('/privacy.html')
+@app.route('/privacy')
 def privacy():
     return render_template('privacy.html')
-@app.route('/priv_D.html')
+@app.route('/priv_')
 def priv_D():
     return render_template('priv_D.html')
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+@app.route('/image')
+def image():
+    return render_template('lightimage.html')
+@app.route('/dimage')
+def dimage():
+    return render_template('darkimage.html')
+@app.route('/settings')
+def setting():
+    return render_template('setting.html')
 if __name__ == '__main__':
     app.run(debug=True)

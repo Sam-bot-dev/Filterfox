@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Filter_fox Settings</title>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#3d9970",
+        "background-light": "#f8f7f6",
+        "background-dark": "#1a1a1a",
+        "card-light": "#ffffff",
+        "card-dark": "#242424",
+        "text-light": "#1b1b1b",
+        "text-dark": "#f8f7f6",
+        "subtext-light": "#6b7280",
+        "subtext-dark": "#a1a1aa",
+        "border-light": "#f0f0f0",
+        "border-dark": "#3f3f46"
+      },
+      fontFamily: { "display": ["Inter", "sans-serif"] },
+      boxShadow: { 'subtle': '0 4px 12px rgba(0,0,0,0.08)' }
+    }
+  }
+}
+</script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+
+<div class="relative flex min-h-screen w-full flex-col">
+<div class="flex h-full grow">
+
+<!-- SIDEBAR -->
+<aside class="flex-shrink-0 w-64 p-4 border-r border-border-light dark:border-border-dark">
+<div class="flex flex-col gap-4">
+
+<div class="flex items-center gap-3 p-2">
+  <div id="sidebarAvatar" class="bg-center bg-no-repeat bg-cover rounded-full size-10"></div>
+  <div class="flex flex-col">
+    <h1 id="sidebarName" class="text-base font-medium"></h1>
+    <p class="text-subtext-light text-sm">Settings</p>
+  </div>
+</div>
+
+<nav class="flex flex-col gap-1 mt-4">
+  <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary" href="#profile">
+    <span class="material-symbols-outlined">person</span> Profile
+  </a>
+  <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-subtext-light dark:text-subtext-dark hover:text-primary hover:bg-primary/10 transition-colors duration-200" href="#account">
+<span class="material-symbols-outlined text-2xl">manage_accounts</span>
+<p class="text-sm font-medium leading-normal">Account Settings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-subtext-light dark:text-subtext-dark hover:text-primary hover:bg-primary/10 transition-colors duration-200" href="#security">
+<span class="material-symbols-outlined text-2xl">shield</span>
+<p class="text-sm font-medium leading-normal">Security</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-subtext-light dark:text-subtext-dark hover:text-primary hover:bg-primary/10 transition-colors duration-200" href="#search">
+<span class="material-symbols-outlined text-2xl">search</span>
+<p class="text-sm font-medium leading-normal">Search Preferences</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-subtext-light dark:text-subtext-dark hover:text-primary hover:bg-primary/10 transition-colors duration-200" href="#appearance">
+<span class="material-symbols-outlined text-2xl">palette</span>
+<p class="text-sm font-medium leading-normal">Appearance</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-subtext-light dark:text-subtext-dark hover:text-primary hover:bg-primary/10 transition-colors duration-200" href="#privacy">
+<span class="material-symbols-outlined text-2xl">database</span>
+<p class="text-sm font-medium leading-normal">Privacy &amp; Data</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-subtext-light dark:text-subtext-dark hover:text-primary hover:bg-primary/10 transition-colors duration-200" href="#notifications">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+<p class="text-sm font-medium leading-normal">Notifications</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-subtext-light dark:text-subtext-dark hover:text-primary hover:bg-primary/10 transition-colors duration-200" href="#about">
+<span class="material-symbols-outlined text-2xl">info</span>
+<p class="text-sm font-medium leading-normal">About Filter_fox</p>
+</a>
+</nav>
+
+</div>
+</aside>
+
+<!-- MAIN -->
+<main class="flex-1 p-8 overflow-y-auto">
+<div class="max-w-4xl mx-auto space-y-12">
+
+<section id="profile">
+<div class="flex items-center justify-between">
+<div class="flex gap-4 items-center">
+  <div id="profileAvatar" class="bg-center bg-no-repeat bg-cover rounded-full w-24 h-24"></div>
+  <div class="flex flex-col">
+    <p id="profileName" class="text-[22px] font-bold"></p>
+    <p id="profileEmail" class="text-subtext-light text-base"></p>
+  </div>
+</div>
+</div>
+</section>
+<section id="account">
+<h2 class="text-text-light dark:text-text-dark text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4">Account Settings</h2>
+<div class="bg-card-light dark:bg-card-dark rounded-xl shadow-subtle p-2 space-y-2">
+<div class="flex items-center gap-4 px-4 py-2 justify-between">
+<div class="flex items-center gap-4">
+<div class="text-subtext-light dark:text-subtext-dark flex items-center justify-center rounded-lg bg-background-light dark:bg-background-dark shrink-0 size-12">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Change Email</p>
+<p class="text-subtext-light dark:text-subtext-dark text-sm font-normal leading-normal">alex.doe@example.com</p>
+</div>
+</div>
+<button class="text-sm font-medium leading-normal px-4 py-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors duration-200">Change</button>
+</div>
+<hr class="border-border-light dark:border-border-dark mx-4"/>
+<div class="flex items-center gap-4 px-4 py-2 justify-between">
+<div class="flex items-center gap-4">
+<div class="text-subtext-light dark:text-subtext-dark flex items-center justify-center rounded-lg bg-background-light dark:bg-background-dark shrink-0 size-12">
+<span class="material-symbols-outlined">lock</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Change Password</p>
+<p class="text-subtext-light dark:text-subtext-dark text-sm font-normal leading-normal">Last changed 3 months ago</p>
+</div>
+</div>
+<button class="text-sm font-medium leading-normal px-4 py-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors duration-200">Change</button>
+</div>
+</div>
+</section>
+<section id="security">
+<h2 class="text-text-light dark:text-text-dark text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4">Security</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col rounded-xl shadow-subtle bg-card-light dark:bg-card-dark p-6">
+<p class="text-text-light dark:text-text-dark text-lg font-bold">Login Activity</p>
+<p class="text-subtext-light dark:text-subtext-dark text-base font-normal mt-1 mb-4">Review recent sign-ins to your account.</p>
+<button class="mt-auto w-full text-sm font-medium leading-normal px-4 py-2.5 rounded-lg border border-border-light dark:border-border-dark hover:bg-primary/10 hover:text-primary transition-colors duration-200">View Activity</button>
+</div>
+<div class="flex flex-col rounded-xl shadow-subtle bg-card-light dark:bg-card-dark p-6">
+<p class="text-text-light dark:text-text-dark text-lg font-bold">Device Management</p>
+<p class="text-subtext-light dark:text-subtext-dark text-base font-normal mt-1 mb-4">Manage devices currently logged into your account.</p>
+<button class="mt-auto w-full text-sm font-medium leading-normal px-4 py-2.5 rounded-lg border border-border-light dark:border-border-dark hover:bg-primary/10 hover:text-primary transition-colors duration-200">Manage Devices</button>
+</div>
+</div>
+<div class="mt-4 bg-card-light dark:bg-card-dark rounded-xl shadow-subtle p-6 flex justify-between items-center">
+<div>
+<p class="text-text-light dark:text-text-dark text-lg font-bold">Sign out from all devices</p>
+<p class="text-subtext-light dark:text-subtext-dark text-base font-normal mt-1">This will sign you out of all active sessions except this one.</p>
+</div>
+<button class="bg-red-500/10 text-red-500 hover:bg-red-500/20 text-sm font-medium leading-normal px-4 py-2.5 rounded-lg transition-colors duration-200">Sign Out</button>
+</div>
+</section>
+<section id="search">
+<h2 class="text-text-light dark:text-text-dark text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4">Search Preferences</h2>
+<div class="bg-card-light dark:bg-card-dark rounded-xl shadow-subtle p-2 space-y-2">
+<div class="flex items-center gap-4 px-4 py-3 justify-between">
+<div class="flex flex-col justify-center">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Safe Search</p>
+<p class="text-subtext-light dark:text-subtext-dark text-sm font-normal leading-normal">Filter explicit results from your searches.</p>
+</div>
+<div class="flex items-center gap-2 rounded-lg p-1 bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark">
+<button class="px-3 py-1 text-sm rounded-md bg-primary text-white">Moderate</button>
+<button class="px-3 py-1 text-sm rounded-md text-subtext-light dark:text-subtext-dark hover:text-primary/90 transition-colors">Strict</button>
+<button class="px-3 py-1 text-sm rounded-md text-subtext-light dark:text-subtext-dark hover:text-primary/90 transition-colors">Off</button>
+</div>
+</div>
+<hr class="border-border-light dark:border-border-dark mx-4"/>
+<div class="flex items-center gap-4 px-4 py-3 justify-between">
+<div class="flex flex-col justify-center">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">AI-Powered Results</p>
+<p class="text-subtext-light dark:text-subtext-dark text-sm font-normal leading-normal">Enable generative AI summaries and insights in search.</p>
+</div>
+<button aria-checked="true" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" role="switch">
+<span class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out translate-x-5"></span>
+</button>
+</div>
+</div>
+</section>
+<section id="appearance">
+<h2 class="text-text-light dark:text-text-dark text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4">Appearance</h2>
+<div class="bg-card-light dark:bg-card-dark rounded-xl shadow-subtle p-6">
+<div class="flex items-center justify-between">
+<div>
+<p class="text-text-light dark:text-text-dark text-base font-medium">Theme</p>
+<p class="text-subtext-light dark:text-subtext-dark text-sm">Choose how Filter_fox looks to you.</p>
+</div>
+<div class="flex items-center gap-2 rounded-lg p-1 bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark">
+<button class="px-3 py-1.5 text-sm rounded-md bg-primary text-white flex items-center gap-2"><span class="material-symbols-outlined text-base">light_mode</span>Light</button>
+<button class="px-3 py-1.5 text-sm rounded-md text-subtext-light dark:text-subtext-dark hover:text-primary/90 transition-colors flex items-center gap-2"><span class="material-symbols-outlined text-base">dark_mode</span>Dark</button>
+<button class="px-3 py-1.5 text-sm rounded-md text-subtext-light dark:text-subtext-dark hover:text-primary/90 transition-colors flex items-center gap-2"><span class="material-symbols-outlined text-base">desktop_windows</span>Auto</button>
+</div>
+</div>
+</div>
+</section>
+<section id="privacy">
+<h2 class="text-text-light dark:text-text-dark text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4">Privacy &amp; Data</h2>
+<div class="bg-card-light dark:bg-card-dark rounded-xl shadow-subtle p-6">
+<div class="flex items-center justify-between">
+<div>
+<p class="text-text-light dark:text-text-dark text-lg font-bold">Export Your Data</p>
+<p class="text-subtext-light dark:text-subtext-dark text-base font-normal mt-1">Download a copy of your search history and settings.</p>
+</div>
+<button class="bg-primary text-white text-sm font-medium leading-normal px-4 py-2.5 rounded-lg hover:opacity-90 transition-opacity">Request Export</button>
+</div>
+<hr class="border-border-light dark:border-border-dark my-6"/>
+<div>
+<p class="text-red-600 dark:text-red-400 text-lg font-bold">Delete Account</p>
+<p class="text-subtext-light dark:text-subtext-dark text-base font-normal mt-1">Permanently delete your account and all associated data. This action cannot be undone.</p>
+<button class="mt-4 border border-red-500/40 bg-red-500/10 text-red-500 hover:bg-red-500/20 text-sm font-medium leading-normal px-4 py-2.5 rounded-lg transition-colors duration-200">Delete My Account</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+<!-- 🔐 FIREBASE LOGIN LOGIC (ONLY ADDITION) -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAGEj-3FnOTx9XFygjcZ5XrhPje2mY4w7s",
+  authDomain: "seeker-aa1ec.firebaseapp.com",
+  projectId: "seeker-aa1ec",
+  storageBucket: "seeker-aa1ec.firebasestorage.app",
+  messagingSenderId: "42245521307",
+  appId: "1:42245521307:web:963e794ad242509d5feb3e"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    console.warn("User not logged in");
+    return;
+  }
+
+  const name = user.displayName || "User";
+  const email = user.email || "";
+  const photo = user.photoURL || "https://www.gravatar.com/avatar/?d=mp";
+
+  document.getElementById("sidebarName").textContent = name;
+  document.getElementById("profileName").textContent = name;
+  document.getElementById("profileEmail").textContent = email;
+
+  document.getElementById("sidebarAvatar").style.backgroundImage = `url('${photo}')`;
+  document.getElementById("profileAvatar").style.backgroundImage = `url('${photo}')`;
+});
+</script>
+
+</body>
+</html>

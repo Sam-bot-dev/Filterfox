@@ -64,6 +64,7 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
   <img id="avatarImg" src="" alt="User Avatar" class="w-full h-full object-cover rounded-full"/>
   <!-- Dropdown -->
   <div id="avatarDropdown" class="hidden absolute right-0 mt-12 w-40 bg-surface-light dark:bg-surface-dark shadow-soft rounded-lg py-2 flex flex-col z-50">
+    <button id="settingsBtn" class="px-4 py-2 text-sm text-text-body-light dark:text-text-body-dark hover:bg-subtle-light dark:hover:bg-subtle-dark text-left">Setting</button>
     <button id="logoutBtn" class="px-4 py-2 text-sm text-text-body-light dark:text-text-body-dark hover:bg-subtle-light dark:hover:bg-subtle-dark text-left">Logout</button>
   </div>
 </div>
@@ -142,6 +143,11 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 function fadeToSignup() { document.body.style.transition="opacity 0.5s"; document.body.style.opacity=0; setTimeout(()=>window.location.href="signup.html",500);}
 function fadeToSignin() { document.body.style.transition="opacity 0.5s"; document.body.style.opacity=0; setTimeout(()=>window.location.href="signin.html",500);}
 document.getElementById("themeBtn").addEventListener("click",()=>{document.body.style.transition="opacity 0.3s"; document.body.style.opacity=0; setTimeout(()=>window.location.href="dark.html",300);});
+</script>
+<script>
+  document.getElementById("settingsBtn").addEventListener("click", () => {
+    window.location.href = "settings";
+  });
 </script>
 
 <!-- FIREBASE AUTH -->
