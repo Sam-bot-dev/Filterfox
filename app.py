@@ -72,5 +72,8 @@ def dimage():
 @app.route('/settings')
 def setting():
     return render_template('setting.html')
+@app.route('/settingd')
+def settingd():
+    return render_template('settingd.html')
 if __name__ == '__main__':
     app.run(debug=True)
