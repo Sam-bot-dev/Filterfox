@@ -67,16 +67,19 @@ def contact():
 def image():
     return render_template('lightimage.html')
 @app.route('/dimage')
-def dimage():
+def darkimage():
     return render_template('darkimage.html')
 @app.route('/settings')
 def setting():
     return render_template('setting.html')
 @app.route('/settingd')
-def settingd():
+def settingdark():
     return render_template('settingd.html')
 @app.route('/gpt')
 def Filtergpt():
     return render_template('FilterGpt.html')
+@app.route('/gptd')
+def FilterGptDark():
+    return render_template('FilterGptD.html')
 if __name__ == '__main__':
     app.run(debug=True)
