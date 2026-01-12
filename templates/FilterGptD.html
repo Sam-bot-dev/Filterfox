@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Filter_GPT - AI Chat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2D2D2D",
+                        "accent-green": "#22C55E",
+                        "background-light": "#FAFAFA",
+                        "background-dark": "#1A1A1A",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#2C2C2C",
+                        "surface-darker": "#3A3A3A",
+                        "surface-lighter": "#4A4A4A",
+                        "text-primary-light": "#333333",
+                        "text-primary-dark": "#FAFAFA",
+                        "text-secondary-light": "#888888",
+                        "text-secondary-dark": "#CCCCCC",
+                        "border-light": "#EAEAEA",
+                        "border-dark": "#3A3A3A",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "12px",
+                        "lg": "16px",
+                        "xl": "24px",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 12px rgba(0,0,0,0.08)',
+                        'soft-dark': '0 4px 16px rgba(0,0,0,0.2)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-primary-light dark:text-text-primary-dark">
+<div class="flex h-screen w-full overflow-hidden">
+<aside class="flex flex-col h-full bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark p-4 transition-all duration-300 ease-in-out w-64">
+<div class="flex flex-col justify-between flex-1">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar with a gradient background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBmNTljNM4rwyn7oo0GGrY9Ei3mtMk8pmVUaFLpvgsw2TPalzwUhcOjfmsusvaLVWrFLcudmXjbsfk7OgJeJcT_5oiJSnFK-0rFJ2D2GTgcRCTyjF6O35sy-UXqhjHvoxSv7akYRexqwoBzi676RcsIUZdkoFuGzd1D1_wPGmLfb3MPeofNLlMymzRxBJV-q_hCztjn5jS6UnNUj8lvv5FvsIzQJ_YgMuFtIXYTK7l6_CHCkCMqQhvrD5V3X3-SSTPsCpSzrNKJikX7");'></div>
+<div class="flex flex-col">
+<h1 class="text-text-primary-light dark:text-text-primary-dark text-sm font-medium leading-normal">Samantha J.</h1>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs font-normal leading-normal">samantha.j@email.com</p>
+</div>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-accent-green text-white text-sm font-medium leading-normal w-full gap-2 hover:bg-opacity-90">
+<span class="material-symbols-outlined">add</span>
+<span class="truncate">New Chat</span>
+</button>
+</div>
+</aside>
+<main class="flex flex-col flex-1 h-screen overflow-y-auto">
+<header class="sticky top-0 z-10 flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark px-6 py-3 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="flex items-center gap-4">
+<h2 class="text-text-primary-light dark:text-text-primary-dark text-lg font-medium leading-tight tracking-[-0.015em]">Filter_GPT</h2>
+<span class="text-xs font-medium text-text-secondary-light dark:text-text-secondary-dark bg-gray-200 dark:bg-surface-darker px-2 py-0.5 rounded-full">BETA</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full size-10 hover:bg-gray-200 dark:hover:bg-surface-darker transition-colors">
+<span class="material-symbols-outlined text-text-primary-light dark:text-text-primary-dark">settings</span>
+</button>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full size-10 hover:bg-gray-200 dark:hover:bg-surface-darker transition-colors" onclick='window.location.href = "/"'>
+<span class="material-symbols-outlined text-text-primary-light dark:text-text-primary-dark">dark_mode</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-9" data-alt="User avatar with a gradient background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC1G0RISz5rhRDHc5zaWMFwndLTJBEL_6fTCYNcUtJULSShO5pUHdmoF6L6w6JVjzACRF-s9A8s7pmbs66Y8BSW4k9x0YDPP3lCfDLUIS7WPgorexiidtU4q80A-DOKdkKLxb5tXXdbSrRwm15iKvSyObGvJh-JJ_6hrGil7eWzxDaYybbRaajXWJl1EGBCpUiCid-JRs5Xx5h6_QiMNQJjD1QAZ4ldAg8d-RK4agLn8YzBCwcj7-y8XX3j4h0Yha7BpirYhI3BXE-B");'></div>
+</div>
+</header>
+<div class="flex flex-col flex-1 justify-center items-center p-4">
+<div class="flex flex-col w-full max-w-3xl mx-auto flex-1 justify-center">
+<div class="flex flex-col items-center gap-4 text-center mb-16">
+<div class="size-16 flex items-center justify-center bg-surface-light dark:bg-surface-dark rounded-xl shadow-soft dark:shadow-soft-dark">
+<div class="size-8">
+<svg class="text-text-primary-dark" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_330">
+<rect fill="white" height="48" width="48"></rect>
+</clipPath>
+</defs>
+</svg>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1">
+<p class="text-text-primary-light dark:text-text-primary-dark text-2xl font-medium leading-tight">Filter_GPT</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-base font-normal leading-normal">Smarter Search. Smarter Answers.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-2 p-4 bg-surface-light dark:bg-surface-dark rounded-lg shadow-soft dark:shadow-soft-dark cursor-pointer hover:bg-gray-50 dark:hover:bg-surface-darker/50 transition-colors">
+<p class="text-text-primary-light dark:text-text-primary-dark text-base font-medium leading-normal">Summarize this article</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">Paste a URL and get key insights instantly</p>
+</div>
+<div class="flex flex-col gap-2 p-4 bg-surface-light dark:bg-surface-dark rounded-lg shadow-soft dark:shadow-soft-dark cursor-pointer hover:bg-gray-50 dark:hover:bg-surface-darker/50 transition-colors">
+<p class="text-text-primary-light dark:text-text-primary-dark text-base font-medium leading-normal">Generate a business plan</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">For a new sustainable tech startup</p>
+</div>
+<div class="flex flex-col gap-2 p-4 bg-surface-light dark:bg-surface-dark rounded-lg shadow-soft dark:shadow-soft-dark cursor-pointer hover:bg-gray-50 dark:hover:bg-surface-darker/50 transition-colors">
+<p class="text-text-primary-light dark:text-text-primary-dark text-base font-medium leading-normal">Compare market trends</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">Between AI in healthcare and fintech</p>
+</div>
+<div class="flex flex-col gap-2 p-4 bg-surface-light dark:bg-surface-dark rounded-lg shadow-soft dark:shadow-soft-dark cursor-pointer hover:bg-gray-50 dark:hover:bg-surface-darker/50 transition-colors">
+<p class="text-text-primary-light dark:text-text-primary-dark text-base font-medium leading-normal">Explain quantum computing</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">In simple, easy-to-understand terms</p>
+</div>
+</div>
+</div>
+<div class="w-full max-w-3xl mx-auto pt-4 pb-2 sticky bottom-0 bg-background-light dark:bg-background-dark">
+<div class="relative">
+<div class="flex w-full items-center p-2 bg-surface-light dark:bg-surface-dark rounded-lg shadow-soft dark:shadow-soft-dark border border-border-light dark:border-border-dark">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-gray-200 dark:hover:bg-surface-darker transition-colors">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark">attach_file</span>
+</button>
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-gray-200 dark:hover:bg-surface-darker transition-colors">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark">mic</span>
+</button>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden bg-transparent text-text-primary-light dark:text-text-primary-dark focus:outline-0 focus:ring-0 border-none h-full placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark px-4 py-2.5 text-base font-normal leading-normal" placeholder="Ask anything..." value=""/>
+<button class="flex items-center justify-center size-9 bg-accent-green text-white rounded-full hover:bg-opacity-90 transition-colors flex-shrink-0">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
