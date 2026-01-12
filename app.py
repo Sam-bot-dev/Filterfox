@@ -75,5 +75,8 @@ def setting():
 @app.route('/settingd')
 def settingd():
     return render_template('settingd.html')
+@app.route('/gpt')
+def Filtergpt():
+    return render_template('FilterGpt.html')
 if __name__ == '__main__':
     app.run(debug=True)
