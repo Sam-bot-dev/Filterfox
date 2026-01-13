@@ -87,5 +87,8 @@ def news():
 @app.route('/newsd')
 def newsd():
     return render_template('newsd.html')
+@app.route('/MAGIC')
+def magicspace():
+    return render_template('MagicSpace.html')
 if __name__ == '__main__':
     app.run(debug=True)
