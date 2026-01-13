@@ -81,5 +81,11 @@ def Filtergpt():
 @app.route('/gptd')
 def FilterGptDark():
     return render_template('FilterGptD.html')
+@app.route('/news')
+def news():
+    return render_template('news.html')
+@app.route('/newsd')
+def newsd():
+    return render_template('newsd.html')
 if __name__ == '__main__':
     app.run(debug=True)
