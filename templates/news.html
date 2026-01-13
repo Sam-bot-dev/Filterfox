@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Filter_fox - AI-Powered News Search</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0d59f2",
+              "background-light": "#FAFAFA",
+              "card-light": "#FFFFFF",
+              "border-light": "#E0E0E0",
+              "text-primary-light": "#1A1A1A",
+              "text-secondary-light": "#555555",
+              "chip-light": "#F2F2F2"
+            },
+            fontFamily: {
+              "display": ["Work Sans", "Noto Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center py-5 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40">
+<div class="layout-content-container flex flex-col w-full max-w-[1200px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light px-4 sm:px-6 lg:px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-text-primary-light">
+<div class="size-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h1 class="text-text-primary-light text-xl font-bold leading-tight tracking-[-0.015em]">Filter_fox</h1>
+</div>
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-text-secondary-light flex bg-chip-light items-center justify-center pl-4 rounded-l-lg border border-r-0 border-border-light">
+<span class="material-symbols-outlined" style="font-size: 20px;">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-text-primary-light focus:outline-0 focus:ring-0 border border-border-light bg-chip-light h-full placeholder:text-text-secondary-light px-4 pl-2 text-base font-normal leading-normal" placeholder="Search news..." value=""/>
+</div>
+</label>
+</div>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-chip-light text-text-secondary-light border border-border-light text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined">person</span>
+</button>
+</header>
+<div class="flex items-center gap-3 p-4 border-b border-solid border-border-light overflow-x-auto">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary text-white pl-4 pr-4">
+<p class="text-white text-sm font-medium leading-normal">All</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-chip-light hover:bg-border-light transition-colors pl-4 pr-4">
+<p class="text-text-primary-light text-sm font-medium leading-normal">Tech</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-chip-light hover:bg-border-light transition-colors pl-4 pr-4">
+<p class="text-text-primary-light text-sm font-medium leading-normal">India</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-chip-light hover:bg-border-light transition-colors pl-4 pr-4">
+<p class="text-text-primary-light text-sm font-medium leading-normal">World</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-chip-light hover:bg-border-light transition-colors pl-4 pr-4">
+<p class="text-text-primary-light text-sm font-medium leading-normal">Finance</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-chip-light hover:bg-border-light transition-colors pl-4 pr-4">
+<p class="text-text-primary-light text-sm font-medium leading-normal">Sports</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-chip-light hover:bg-border-light transition-colors pl-4 pr-2 ml-auto">
+<p class="text-text-primary-light text-sm font-medium leading-normal">More</p>
+<span class="material-symbols-outlined text-text-secondary-light">arrow_drop_down</span>
+</button>
+</div>
+<div class="flex justify-between items-center gap-2 px-4 py-3">
+<p class="text-text-secondary-light text-sm">Showing latest news</p>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+<button class="p-2 rounded-lg text-text-secondary-light hover:bg-chip-light transition-colors">
+<span class="material-symbols-outlined">view_list</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4">
+<div class="flex flex-col gap-3 pb-3 bg-card-light rounded-xl overflow-hidden group border border-transparent hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="AI robot interacting with a futuristic interface" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC78-buuTvqK_qBVe_Dm8nUZsrDhyX-vU-bQj6It-HM-TfFxuKBP4FUJSERie-u_wH5k2lHxFisOQ-HBZ-hiexEsluRDYUChMWbh1KMAbI-c09arnAcLMz1N2OYA-YLoB1anJlcl60GCeJyY2_51wDxy3_Ne352nbJiykWWsvoghpFivpEPXpQOqpIcZMFRC95kMts4GBUzfMsgBTTfBC1eYTvtpB9uPbdF-zXP_Jwd9_65tV6GYdVAa8lAlTuxn2UQOlql1Mqt38I8");'></div>
+<div class="px-4">
+<p class="text-text-primary-light text-base font-bold leading-normal mb-2 group-hover:text-primary transition-colors">AI Breakthrough: New Model Achieves Human-Level Understanding</p>
+<p class="text-text-secondary-light text-sm font-normal leading-normal">2 hours ago</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 pb-3 bg-card-light rounded-xl overflow-hidden group border border-transparent hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="Stock market graphs on a digital screen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBhdE6Sra-jcLGkDE8s4fCPAQ3EAH_vZPETgCrkUeOlxUgazf98a3goI9mq3VugGcvc2w6sX0SU6QRw6NNrRTcI4BiBig6dySborDv2vmOqbXlkp4jlRHPTdMSr-deZIEVuBYs1k12Jfwu2x3XbTu2AgwjWU4wm4LFmlCr1-7Bs3e25cvk_VH9OUpAd0A26r4FiXPuztbWu967Pl6MVb_wKTBeVlmHxZsxyYlrJ60-W4xk7iiXGAuKtnl41XT1akRMceDjoiWtl0HvX");'></div>
+<div class="px-4">
+<p class="text-text-primary-light text-base font-bold leading-normal mb-2 group-hover:text-primary transition-colors">Market Hits Record Highs Amidst Tech Rally</p>
+<p class="text-text-secondary-light text-sm font-normal leading-normal">3 hours ago</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 pb-3 bg-card-light rounded-xl overflow-hidden group border border-transparent hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="Wind turbines against a dramatic sky" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB-diU_Itkjnc9dHc_5S2vubWwprFczMRJVDk8UpjM3ZooPTjihEhiibnkHSNLBdCE0A23v_nMF0c1iWeP6epPVVJC1Dy7ZdOR9Ok7ICiB2waUDKHPmjj6KiNkc7YPRJI9iG8Qvy-adlcqxYHIMjHH46hoPawYhR8EHYuTiBWpSu9efuhyrTrcYxUrrsa_RwOBv-URDPC9JxIhnGTAPBXenm5mlTbw_Xtk1DgoXBXqp1f5O2K5lcKYLt8VmyJx-UH7rjSUxH4U9eZUY");'></div>
+<div class="px-4">
+<p class="text-text-primary-light text-base font-bold leading-normal mb-2 group-hover:text-primary transition-colors">Global Summit Addresses Climate Change Urgency</p>
+<p class="text-text-secondary-light text-sm font-normal leading-normal">5 hours ago</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 pb-3 bg-card-light rounded-xl overflow-hidden group border border-transparent hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="An artist's conception of an exoplanet orbiting a star" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCN5El3tjWoM8ytGOaooZGXspkkaLx-fBNS80ZA6uOBPJLOxHtF1dH-ReIhVMFRYNpKxbBEYGtBQQbgNDlo7RF0XpXgdwsuOTUX6tPfSqDm95T8xDA2Yjtpg4DCyQyMkndMEphPdNdCccL-OOT4AL9ZydQwgpSTFhVhrtrvds6ifbQWOySeUte5cUqqZfldamPdOLtFFpCBb87BBkZvdFagf1xnsPC85a1vCT4GpLajx82bxQVUGmvsbueZgPsDSLOgVOFFCtL1bqWD");'></div>
+<div class="px-4">
+<p class="text-text-primary-light text-base font-bold leading-normal mb-2 group-hover:text-primary transition-colors">New Space Telescope Discovers Potentially Habitable Exoplanet</p>
+<p class="text-text-secondary-light text-sm font-normal leading-normal">8 hours ago</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 pb-3 bg-card-light rounded-xl overflow-hidden group border border-transparent hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="Close-up of a modern electric car charging" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBOuUARtra3JupOZl9-rO6hCfJi70xFDr_1uybwaq579iq4MavUjGQ8f7aB-Z90MjQD3D8TwuDfTE76ezQ4Ef4rncvKFOSqXsc9LPg-DsplssEpwbIF7sUCckJ61LMTaCAFtOhcVhgwEz0EuBt2WazjKNEM2fp2_iyOla6U-Fms69swh6j9ndXzbke-tcnPIOzkLPaYekNugycoLh62Aghc0nTW8vOMk_nspDWPpEQ2owf7xgDPPQwntQJA3pcLrmGZv9lEFqfihLZf");'></div>
+<div class="px-4">
+<p class="text-text-primary-light text-base font-bold leading-normal mb-2 group-hover:text-primary transition-colors">Breakthrough in Battery Technology Promises Greener Future</p>
+<p class="text-text-secondary-light text-sm font-normal leading-normal">1 day ago</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 pb-3 bg-card-light rounded-xl overflow-hidden group border border-transparent hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="Vibrant abstract painting at a cultural festival" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCFI80XIC-LFfxvY6suWYHhjRlNBRKuke_HLTjCzAc8wbb5xoGv1Z7-DlpyInEtjY-yMRaPQ4bdqZ4VfB-KERy8StmT97KXoHIeY-ziZ98n8fKvbhLEBrjfMvsgSpLDUVT-LlKhfXsN4SEXqW6npoQ8KYn_eHpzF7JjSIADoZk5x8WQhLDusg9m5xMs_bqLdQPJk5DMvuIWdxRa5PfQVn2Wtr-EiB-7q08IcYQoYWod5JoQm1Gd423Aa2voqxOYaDl3u5GsFN-S3omV");'></div>
+<div class="px-4">
+<p class="text-text-primary-light text-base font-bold leading-normal mb-2 group-hover:text-primary transition-colors">Cultural Festival Celebrates Diversity with Art and Music</p>
+<p class="text-text-secondary-light text-sm font-normal leading-normal">2 days ago</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 pb-3 bg-card-light rounded-xl overflow-hidden group border border-transparent hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="Soccer ball in a stadium net" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCJFpCyGXnvLtwB-iIpwdbNlF6458_nXGcwxPEaA8XvJlP571M8lJ4GPoo111VeZMh5gMi-V3C8uNtW9DZEVP3WaTUc88x_-ESR55AYZols0XJ7zEm_doFzFU6T40Wgo-X8q-XsepJog2pSO773Zcyll-RrRGDDPFa3oFayP4CXkzZW6BLa8P5HOvhp6Tfr7JoDUV2Q4VrUb4VpkZu9rFVp3pZ38x8iztsOE38RtYGkr96O1Do2ajm1UPaMrmH0jHtOxlsLvwjnb_eL");'></div>
+<div class="px-4">
+<p class="text-text-primary-light text-base font-bold leading-normal mb-2 group-hover:text-primary transition-colors">Champions League Final Delivers Unforgettable Drama</p>
+<p class="text-text-secondary-light text-sm font-normal leading-normal">3 days ago</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 pb-3 bg-card-light rounded-xl overflow-hidden group border border-transparent hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="Scientist looking at a DNA helix model on a screen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuChmPJCE3uLDghvCApYz5l-mcnJmVaa4U3Qv1OkAM772kNBeqNzOZ5SOo2rKUb7zTbuvBIHJzVPqlI9sSCimiZqddC2WByqKS2Kz8E0jdBdg4Wh7gpMrTHuj_LNDIsRf_wq4a3Hqn7aaM_dk5gk9FzYTf7pR_FYbB5dd_mZ71R7zt6EspH04YtnF_oak6LIreAVlPJLqku4T-KeIpP2VYzqcBQHO3WsO8DMY_pBLoSeUpRfcKDkDKmNHk83aCVQ8HN_tF3MVhfxrjXR");'></div>
+<div class="px-4">
+<p class="text-text-primary-light text-base font-bold leading-normal mb-2 group-hover:text-primary transition-colors">New Gene-Editing Technique Could Revolutionize Medicine</p>
+<p class="text-text-secondary-light text-sm font-normal leading-normal">4 days ago</p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-center p-4 mt-4">
+<a class="flex size-10 items-center justify-center text-text-secondary-light hover:text-text-primary-light" href="#">
+<span class="material-symbols-outlined">chevron_left</span>
+</a>
+<a class="text-sm font-bold leading-normal tracking-[0.015em] flex size-10 items-center justify-center text-white rounded-full bg-primary" href="#">1</a>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-text-secondary-light rounded-full hover:bg-chip-light" href="#">2</a>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-text-secondary-light rounded-full hover:bg-chip-light" href="#">3</a>
+<span class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-text-secondary-light rounded-full">...</span>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-text-secondary-light rounded-full hover:bg-chip-light" href="#">10</a>
+<a class="flex size-10 items-center justify-center text-text-secondary-light hover:text-text-primary-light" href="#">
+<span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>
