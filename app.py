@@ -90,5 +90,8 @@ def newsd():
 @app.route('/MAGIC')
 def magicspace():
     return render_template('MagicSpace.html')
+@app.route('/load')
+def loading():
+    return render_template('loadingpage.html')
 if __name__ == '__main__':
     app.run(debug=True)
