@@ -20,3 +20,14 @@ Stores everything for searching later
 Think of it like a robot explorer that travels across the internet collecting pages.
 
 ---
+
+🧠 Why do we need a crawler in Filter_fox?
+
+Because if you want a real search engine, you need your own database of pages.
+
+Google doesn’t “search the live internet every time you type”.
+It searches its own stored index.
+
+So your crawler’s job is to build your collection of pages.
+
+---
