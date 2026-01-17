@@ -1,2 +1,22 @@
-here i am going to use crawler with rag model so that crawler bring data from website and rag model use it to generate and make our work 
-easy
+here i am going to use crawler with rag model so that crawler bring data from website and rag model use it to generate and make our work easy
+---
+
+✅ What is a Web Crawler?
+
+A web crawler is a program (bot) that:
+
+Finds web pages
+
+Visits them
+
+Reads their content
+
+Extracts links from them
+
+Repeats the process
+
+Stores everything for searching later
+
+Think of it like a robot explorer that travels across the internet collecting pages.
+
+---
