@@ -31,3 +31,55 @@ It searches its own stored index.
 So your crawler’s job is to build your collection of pages.
 
 ---
+
+🚦 Important rules a crawler must follow (real-world)
+1) Robots.txt (Respect website rules)
+
+Many sites have a file:
+/robots.txt
+
+It tells crawlers:
+
+allowed pages
+
+disallowed pages
+
+crawl delay
+
+Example:
+
+Disallow: /private
+
+
+So your crawler should respect it.
+
+2) Rate limiting (Don’t overload sites)
+
+Crawler must not spam requests.
+If you send 100 requests/sec → website blocks you.
+
+So you use:
+✅ delay per domain
+
+3) Depth limit (Control how deep it goes)
+
+Depth means:
+
+Seed page = depth 0
+Links inside = depth 1
+Links inside those = depth 2…
+
+Without depth limit it can crawl forever.
+
+4) Domain restrictions (for safety)
+
+In early version, you should crawl only:
+
+specific domain
+
+or selected sites
+
+Example:
+crawl only Wikipedia pages.
+
+---
