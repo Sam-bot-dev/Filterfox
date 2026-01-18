@@ -5,7 +5,7 @@ here i am going to use crawler with rag model so that crawler bring data from we
 
 A web crawler is a program (bot) that:
 
-Finds web pages
+Finds web page
 
 Visits them
 
